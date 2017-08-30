@@ -1,3 +1,5 @@
+const FileList = require('./plugins/filelist.js')
+
 module.exports = {
   entry: './src/entry.js',
   output: {
@@ -8,5 +10,8 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loaders: 'style-loader!css-loader' }
     ]
-  }
+  },
+  plugins: [
+    new FileList({options: true})
+  ]
 }
